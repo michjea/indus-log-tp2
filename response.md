@@ -42,3 +42,23 @@ La première étape contient le mot-clé 'with' pour permettre de spécifier des
 **À quoi sert l'indicateur Quality Gate ?**
 
 L'indicateur Quality Gate de SonarCloud permet de définir des seuils de qualité pour le code analysé Il permet de s'assurer que le code respecte un ensemble de critères définis et de fournir un retour d'information immédiat sur la qualité du code. Si le code ne répond pas aux critères définis, il ne passera pas le Quality Gate et une alerte sera générée.
+
+## b)
+
+**Quelle est la différence entre les sections New code et Overall Code dans l'onglet Summary ?**
+
+La section "New code" de l'onglet Summary de SonarCloud représente les résultats de l'analyse du code qui a été ajouté ou modifié depuis la dernière analyse, tandis que la section "Overall Code" représente les résultats pour l'ensemble du code. La section "New code" peut aider à identifier rapidement les problèmes dans le code récemment ajouté ou modifié.
+
+**Y a-t-il des Code Smells ? Si oui, combien et pour quelles raisons ?**
+
+Oui, il y a 3 "Code Smells", pour wallet.py :
+
+- Remove the unused function parameter "deferred".
+- Update this function so that its implementation is not identical to spend_cash on line 20.
+- Remove the unused function parameter "deferred".
+
+**Y a-t-il des Security Hotspots ? Si oui, combien et pour quelles raisons ?**
+
+Oui, il y a 1 "Security Hotspot".
+
+- The python image runs with root as the default user. Make sure it is safe here.

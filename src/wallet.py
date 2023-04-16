@@ -17,7 +17,7 @@ class Wallet(object):
         """Returns the current balance of the current Wallet object"""
         return self.balance
 
-    def spend_cash(self, amount, deferred=False):
+    def spend_cash(self, amount):  # , deferred=False):
         """Removes the specified amount of money from the current Wallet object"""
         if self.balance < amount:
             raise InsufficientAmount(f"Not enough available to spend {amount}")
@@ -28,9 +28,11 @@ class Wallet(object):
         """Adds the specified amount of money to the current Wallet object"""
         self.balance += amount
 
-    def spend_money(self, amount, deferred=False):
+    def spend_money(self, amount):  # , deferred=False):
         """Removes the specified amount of money from the current Wallet object"""
-        if self.balance < amount:
+        """if self.balance < amount:
             raise InsufficientAmount(f"Not enough available to spend {amount}")
 
-        self.balance -= amount
+        self.balance -= amount"""
+        # Identical to spend_cash, but with a different name
+        self.spend_cash(amount)
