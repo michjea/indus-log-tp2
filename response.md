@@ -62,3 +62,31 @@ Oui, il y a 3 "Code Smells", pour wallet.py :
 Oui, il y a 1 "Security Hotspot".
 
 - The python image runs with root as the default user. Make sure it is safe here.
+
+# Exercice 3
+
+## a)
+
+**1. Que fait le job pytest ?**
+
+Le job pytest exécute des tests unitaires avec pytest. Il installe les dépendances du projet, crée un environnement virtuel, exécute les tests unitaires et vérifie que tous les tests passent.
+
+**2. Que fait le job image-creation ?**
+
+Le job image-creation crée une image Docker à partir du fichier Dockerfile du projet en utilisant kaniko, une alternative à Docker. Cette image est ensuite stockée dans le registre Docker de GitLab.
+
+**3. Que fait le job package-creation ?**
+
+Le job package-creation crée un package Python sous forme de fichier .whl à partir du code source du projet. Il utilise le module build pour créer le package et le module twine pour le publier sur le registre PyPI.
+
+**4. Les jobs s'exécutent-ils dans le même ordreque défini dans le fichier ? Sinon, pourquoi ?**
+
+Les jobs ne s'exécutent pas toujours dans le même ordre que défini dans le fichier .gitlab-ci.yml. GitLab exécute les jobs dans l'ordre déterminé par leur dépendance, qui peut être définie en utilisant les mots clés only/except et les variables d'environnement. Par exemple, un job ne sera exécuté que si le job précédent a réussi.
+
+**5. Le stage 2 génère une image Docker. Où est-elle stockée et comment pouvez-vous la retrouver ?**
+
+L'image Docker créée par le stage 2 est stockée dans le registre Docker de GitLab, qui peut être consulté dans l'onglet "Packages & Registries" de GitLab. Il peut également être récupéré en utilisant la commande Docker pull en spécifiant l'emplacement de l'image dans le registre Docker de GitLab.
+
+**6. Le stage 3 génère un wheel Python. Où est-il stocké et comment pouvez-vous le retrouver ?**
+
+Le wheel Python créé par le stage 3 est stocké dans le dossier dist/ du projet. Il est également publié sur le registre PyPI à l'aide du module twine, comme spécifié dans le fichier .gitlab-ci.yml. Le package peut être téléchargé depuis le registre PyPI ou en utilisant la commande pip install en spécifiant le nom du package et le dépôt PyPI.
