@@ -26,3 +26,19 @@ Chaque étape est définie par deux éléments :
 La première étape contient le mot-clé 'with' pour permettre de spécifier des options supplémentaires pour l'action "uses". Dans ce cas, l'option spécifiée est la version de Python à utiliser.
 
 ## Exercice 2
+
+## a)
+
+**Sur l'onglet Summary d'une analyse de code, SonarCloud fournit 4 indicateurs. Quels sont-ils et quelles sont leurs utilités ?**
+
+- Bugs : il s'agit du nombre de bugs détectés dans le code analysé. Les bugs sont des erreurs de programmation qui peuvent entraîner des comportements inattendus ou des plantages du logiciel.
+
+- Vulnerabilities (vulnérabilités) : il s'agit du nombre de vulnérabilités détectées dans le code analysé. Les vulnérabilités sont des faiblesses dans le code qui peuvent être exploitées par des attaquants pour compromettre la sécurité du système.
+
+- Code Smells (odeurs de code) : il s'agit du nombre de violations des bonnes pratiques de programmation détectées dans le code analysé. Les odeurs de code peuvent rendre le code plus difficile à maintenir, à comprendre et à modifier.
+
+- Security Hotspots (points chauds de sécurité) : il s'agit du nombre de points chauds de sécurité détectés dans le code analysé. Les points chauds de sécurité sont des zones du code qui nécessitent une attention particulière en raison de leur sensibilité aux attaques.
+
+**À quoi sert l'indicateur Quality Gate ?**
+
+L'indicateur Quality Gate de SonarCloud permet de définir des seuils de qualité pour le code analysé Il permet de s'assurer que le code respecte un ensemble de critères définis et de fournir un retour d'information immédiat sur la qualité du code. Si le code ne répond pas aux critères définis, il ne passera pas le Quality Gate et une alerte sera générée.
