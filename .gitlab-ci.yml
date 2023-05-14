@@ -10,8 +10,7 @@ cache:
     - venv/
 
 pytest:
-  script:
-    python --version
+  script: python --version
     - pip install virtualenv
     - virtualenv venv
     - source venv/bin/activate
